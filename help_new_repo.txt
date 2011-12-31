@@ -1,0 +1,5 @@
+cd directory_where_you_work
+git init
+git add .
+git commit -m "initial commit"
+git push
