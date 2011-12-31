@@ -1,0 +1,11 @@
+pwd
+ls
+cd ..
+git add some_file.txt
+git status
+git commit -m "this will commit only what you explicitly 'added'"
+...edit file some_file.txt and then save it in your editor
+git commit -am "this will commit anything that you changed that is already in your git, so some_file.txt will automatically get 'add'ed and 'commit'ed"
+git status  # this is good to see what git thinks is happening
+git log  # this will show you what you have commited recently
+git push  # this will push the changes up to orign
