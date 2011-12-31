@@ -1,0 +1,58 @@
+cvetest(master=)$ git st
+# On branch master
+nothing to commit (working directory clean)
+cvetest(master=)$ ls
+README
+cvetest(master=)$ cat README 
+cvetest(master=)$ cat >> README 
+Hi Dad!
+Welcome to Git, and Github :-)         
+
+cvetest(master *=)$ git st
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   README
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+cvetest(master *=)$ git commit -am "Adding a welcome message to the README"
+[master 7139fd2] Adding a welcome message to the README
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+cvetest(master>)$ git st
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#
+nothing to commit (working directory clean)
+cvetest(master>)$ git push
+Counting objects: 5, done.
+Writing objects: 100% (3/3), 300 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:edwards1945/cvetest.git
+   754ccf4..7139fd2  master -> master
+cvetest(master=)$ git st
+# On branch master
+nothing to commit (working directory clean)
+cvetest(master=)$ ls
+README
+cvetest(master=)$ cat > file1.txt
+this is a file
+this is a 2nd line
+this is the 3rd line
+
+and this is line 5
+cvetest(master=)$ git st
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	file1.txt
+nothing added to commit but untracked files present (use "git add" to track)
+cvetest(master=)$ git add file1.txt
+cvetest(master +=)$ git commit -am "added a new file"
+[master f1dcb81] added a new file
+ 1 files changed, 5 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+cvetest(master>)$ cat > log_file.txt
+
